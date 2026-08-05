@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="60" viewBox="0 0 1600 60">
+  <defs>
+    <linearGradient id="aurora1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D1117" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.9"/>
+      <stop offset="80%" stop-color="#38BDF8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="0 3"/>
+    </filter>
+  </defs>
+
+  <!-- Dark background fade -->
+  <rect width="1600" height="60" fill="#0D1117"/>
+
+  <!-- Aurora glow strip -->
+  <rect x="0" y="20" width="1600" height="20" fill="url(#aurora1)" filter="url(#blur1)" opacity="0.9">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Thin glowing line -->
+  <line x1="0" y1="30" x2="1600" y2="30" stroke="url(#aurora1)" stroke-width="1.5" opacity="0.9"/>
+
+  <!-- Moving sparkle 1 — uses animate on cx instead of animateMotion -->
+  <circle cy="30" r="3" fill="#8B5CF6" opacity="0.9">
+    <animate attributeName="cx" values="-10;1610;-10" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Moving sparkle 2 -->
+  <circle cy="30" r="2" fill="#38BDF8" opacity="0.9">
+    <animate attributeName="cx" values="-10;1610;-10" dur="12s" begin="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;0" dur="12s" begin="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

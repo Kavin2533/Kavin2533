@@ -1,0 +1,7 @@
+# Normalize line endings for cross-platform compatibility
+* text=auto
+
+# Force LF for SVG and Markdown (GitHub renders these)
+*.svg text eol=lf
+*.md  text eol=lf
+*.yml text eol=lf

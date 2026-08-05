@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="outerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#6366F1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="33%" stop-color="#6366F1"/>
+      <stop offset="66%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="ringGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ambient glow -->
+  <circle cx="100" cy="100" r="96" fill="url(#outerGlow)">
+    <animate attributeName="r" values="94;98;94" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Outer spinning ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#ringGrad1)" stroke-width="2.5"
+          stroke-dasharray="60 20 40 30" filter="url(#glow)" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 100 100" to="360 100 100" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Middle spinning ring (opposite direction) -->
+  <circle cx="100" cy="100" r="83" fill="none" stroke="url(#ringGrad2)" stroke-width="1.5"
+          stroke-dasharray="30 10 50 15" filter="url(#glow)" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="360 100 100" to="0 100 100" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Inner ring static -->
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+
+  <!-- Avatar background circle -->
+  <circle cx="100" cy="100" r="72" fill="#161B22"/>
+
+  <!-- Glowing border for avatar -->
+  <circle cx="100" cy="100" r="72" fill="none" stroke="url(#ringGrad1)" stroke-width="3"
+          opacity="0.9" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!--
+    Orbiting dots — use animateTransform rotate (GitHub-supported) instead of animateMotion.
+    Dots are placed at the top of the orbit radius and the whole group rotates.
+  -->
+
+  <!-- Orbiting dot 1 — on r=90 ring -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 100 100" to="360 100 100" dur="6s" repeatCount="indefinite"/>
+    <circle cx="100" cy="10" r="4" fill="#8B5CF6" filter="url(#glow)"/>
+  </g>
+
+  <!-- Orbiting dot 2 — on r=90 ring, starts 180deg offset -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate"
+                      from="180 100 100" to="540 100 100" dur="6s" repeatCount="indefinite"/>
+    <circle cx="100" cy="10" r="2.5" fill="#38BDF8" filter="url(#glow)"/>
+  </g>
+
+  <!-- Orbiting dot 3 — on r=83 ring, starts 90deg offset -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate"
+                      from="90 100 100" to="450 100 100" dur="9s" repeatCount="indefinite"/>
+    <circle cx="100" cy="17" r="2" fill="#34D399" filter="url(#glow)"/>
+  </g>
+</svg>

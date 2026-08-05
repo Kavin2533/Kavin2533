@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 700 700">
+  <!-- ══════════════════════════════════════════════════════════════
+       TECH ORBIT — Animated technology icons orbiting center avatar
+       3 concentric orbital rings · 12 tech labels
+       ══════════════════════════════════════════════════════════════ -->
+
+  <defs>
+    <!-- Orbit ring gradients -->
+    <linearGradient id="orbitRing1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#EC4899" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="orbitRing2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="orbitRing3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#EC4899" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0.12" />
+    </linearGradient>
+
+    <!-- Center avatar gradient -->
+    <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+
+    <!-- Node background -->
+    <radialGradient id="nodeBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E2030" />
+      <stop offset="100%" stop-color="#161B22" />
+    </radialGradient>
+
+    <!-- Glow filters -->
+    <filter id="orbitGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="centerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="700" height="700" fill="#0D1117" rx="16" />
+
+  <!-- Subtle radial glow behind center -->
+  <circle cx="350" cy="350" r="200" fill="#8B5CF6" opacity="0.04" />
+  <circle cx="350" cy="350" r="300" fill="#22D3EE" opacity="0.02" />
+
+  <!-- ═══ ORBIT RING 3 (Outer — r=300) ═══ -->
+  <circle cx="350" cy="350" r="300" fill="none" stroke="url(#orbitRing3)" stroke-width="1" stroke-dasharray="6,8" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" values="0 350 350;360 350 350" dur="120s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ═══ ORBIT RING 2 (Middle — r=210) ═══ -->
+  <circle cx="350" cy="350" r="210" fill="none" stroke="url(#orbitRing2)" stroke-width="1" stroke-dasharray="4,6" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate" values="360 350 350;0 350 350" dur="90s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ═══ ORBIT RING 1 (Inner — r=130) ═══ -->
+  <circle cx="350" cy="350" r="130" fill="none" stroke="url(#orbitRing1)" stroke-width="1.5" stroke-dasharray="3,5" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" values="0 350 350;360 350 350" dur="60s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ═══ OUTER ORBIT NODES (r=300) — 4 items ═══ -->
+
+  <!-- Node: Cisco (0°, top) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 350 350;360 350 350" dur="80s" repeatCount="indefinite" />
+    <g transform="translate(350, 50)">
+      <circle cx="0" cy="0" r="28" fill="url(#nodeBg)" stroke="#1BA0D7" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="1" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="9" fill="#1BA0D7" font-weight="600" dominant-baseline="middle">CISCO</text>
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#1BA0D7" stroke-width="0.5" opacity="0.3" filter="url(#orbitGlow)" />
+    </g>
+  </g>
+
+  <!-- Node: Cloud (90°, right) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="90 350 350;450 350 350" dur="80s" repeatCount="indefinite" />
+    <g transform="translate(350, 50)">
+      <circle cx="0" cy="0" r="28" fill="url(#nodeBg)" stroke="#22D3EE" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-3" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="14" dominant-baseline="middle">☁️</text>
+      <text x="0" y="12" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="7" fill="#22D3EE" font-weight="500">CLOUD</text>
+    </g>
+  </g>
+
+  <!-- Node: Networking (180°, bottom) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="180 350 350;540 350 350" dur="80s" repeatCount="indefinite" />
+    <g transform="translate(350, 50)">
+      <circle cx="0" cy="0" r="28" fill="url(#nodeBg)" stroke="#6366F1" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-3" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="14" dominant-baseline="middle">🌐</text>
+      <text x="0" y="12" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="7" fill="#6366F1" font-weight="500">NET</text>
+    </g>
+  </g>
+
+  <!-- Node: ESP32 (270°, left) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="270 350 350;630 350 350" dur="80s" repeatCount="indefinite" />
+    <g transform="translate(350, 50)">
+      <circle cx="0" cy="0" r="28" fill="url(#nodeBg)" stroke="#E7352C" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="1" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="8" fill="#E7352C" font-weight="600" dominant-baseline="middle">ESP32</text>
+    </g>
+  </g>
+
+  <!-- ═══ MIDDLE ORBIT NODES (r=210) — 4 items ═══ -->
+
+  <!-- Node: Java (45°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="45 350 350;-315 350 350" dur="55s" repeatCount="indefinite" />
+    <g transform="translate(350, 140)">
+      <circle cx="0" cy="0" r="30" fill="url(#nodeBg)" stroke="#ED8B00" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-3" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="16" dominant-baseline="middle">☕</text>
+      <text x="0" y="13" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="8" fill="#ED8B00" font-weight="600">JAVA</text>
+    </g>
+  </g>
+
+  <!-- Node: Python (135°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="135 350 350;-225 350 350" dur="55s" repeatCount="indefinite" />
+    <g transform="translate(350, 140)">
+      <circle cx="0" cy="0" r="30" fill="url(#nodeBg)" stroke="#3776AB" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-3" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="16" dominant-baseline="middle">🐍</text>
+      <text x="0" y="13" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="7" fill="#3776AB" font-weight="600">PYTHON</text>
+    </g>
+  </g>
+
+  <!-- Node: Azure (225°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="225 350 350;-135 350 350" dur="55s" repeatCount="indefinite" />
+    <g transform="translate(350, 140)">
+      <circle cx="0" cy="0" r="30" fill="url(#nodeBg)" stroke="#0078D4" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="1" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="8" fill="#0078D4" font-weight="700" dominant-baseline="middle">AZURE</text>
+    </g>
+  </g>
+
+  <!-- Node: Arduino (315°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="315 350 350;-45 350 350" dur="55s" repeatCount="indefinite" />
+    <g transform="translate(350, 140)">
+      <circle cx="0" cy="0" r="30" fill="url(#nodeBg)" stroke="#00979D" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-3" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="14" dominant-baseline="middle">🔧</text>
+      <text x="0" y="12" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="6" fill="#00979D" font-weight="600">ARDUINO</text>
+    </g>
+  </g>
+
+  <!-- ═══ INNER ORBIT NODES (r=130) — 4 items ═══ -->
+
+  <!-- Node: Git (0°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 350 350;360 350 350" dur="40s" repeatCount="indefinite" />
+    <g transform="translate(350, 220)">
+      <circle cx="0" cy="0" r="24" fill="url(#nodeBg)" stroke="#F05032" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="1" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="9" fill="#F05032" font-weight="700" dominant-baseline="middle">GIT</text>
+    </g>
+  </g>
+
+  <!-- Node: GitHub (90°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="90 350 350;450 350 350" dur="40s" repeatCount="indefinite" />
+    <g transform="translate(350, 220)">
+      <circle cx="0" cy="0" r="24" fill="url(#nodeBg)" stroke="#C9D1D9" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-2" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="13" dominant-baseline="middle">🐙</text>
+      <text x="0" y="11" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="5" fill="#C9D1D9" font-weight="500">GITHUB</text>
+    </g>
+  </g>
+
+  <!-- Node: VS Code (180°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="180 350 350;540 350 350" dur="40s" repeatCount="indefinite" />
+    <g transform="translate(350, 220)">
+      <circle cx="0" cy="0" r="24" fill="url(#nodeBg)" stroke="#007ACC" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="1" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="7" fill="#007ACC" font-weight="700" dominant-baseline="middle">VSCODE</text>
+    </g>
+  </g>
+
+  <!-- Node: Linux (270°) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="270 350 350;630 350 350" dur="40s" repeatCount="indefinite" />
+    <g transform="translate(350, 220)">
+      <circle cx="0" cy="0" r="24" fill="url(#nodeBg)" stroke="#FCC624" stroke-width="1.5" opacity="0.9" />
+      <text x="0" y="-2" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="13" dominant-baseline="middle">🐧</text>
+      <text x="0" y="11" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="5" fill="#FCC624" font-weight="500">LINUX</text>
+    </g>
+  </g>
+
+  <!-- ═══ CENTER AVATAR ═══ -->
+  <!-- Center glow -->
+  <circle cx="350" cy="350" r="55" fill="#8B5CF6" opacity="0.08" filter="url(#centerGlow)">
+    <animate attributeName="opacity" values="0.08;0.04;0.08" dur="4s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Center ring -->
+  <circle cx="350" cy="350" r="50" fill="none" stroke="url(#centerGrad)" stroke-width="2.5" filter="url(#orbitGlow)">
+    <animate attributeName="stroke-opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Center fill -->
+  <circle cx="350" cy="350" r="46" fill="#0D1117" />
+  <circle cx="350" cy="350" r="46" fill="url(#nodeBg)" opacity="0.5" />
+
+  <!-- Center text -->
+  <text x="350" y="345" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="22" fill="url(#centerGrad)" font-weight="800" letter-spacing="2">KG</text>
+  <text x="350" y="365" text-anchor="middle" font-family="'SF Pro Display', 'Inter', 'Segoe UI', sans-serif" font-size="7" fill="#8B9EB3" letter-spacing="2">TECH STACK</text>
+
+  <!-- ═══ AMBIENT PARTICLES ═══ -->
+  <circle cx="120" cy="120" r="1.5" fill="#8B5CF6" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.08;0.3" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="580" cy="100" r="1" fill="#EC4899" opacity="0.25">
+    <animate attributeName="opacity" values="0.25;0.05;0.25" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="600" cy="580" r="1.5" fill="#22D3EE" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="100" cy="550" r="1" fill="#6366F1" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.08;0.3" dur="6s" repeatCount="indefinite" />
+  </circle>
+</svg>

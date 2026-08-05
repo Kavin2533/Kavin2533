@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1040"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="logo-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background hexagon -->
+  <polygon points="60,4 108,30 108,82 60,108 12,82 12,30"
+           fill="url(#bgGrad)" stroke="url(#logoGrad)" stroke-width="2" opacity="1"/>
+
+  <!-- Glow ring -->
+  <polygon points="60,4 108,30 108,82 60,108 12,82 12,30"
+           fill="none" stroke="url(#logoGrad)" stroke-width="1" opacity="0.5" filter="url(#logo-glow)">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- K letter -->
+  <text x="22" y="76" font-family="'Segoe UI', Arial Black, sans-serif" font-size="52" font-weight="900"
+        fill="url(#logoGrad)" opacity="1" filter="url(#logo-glow)">K</text>
+
+  <!-- G letter (slightly smaller, offset) -->
+  <text x="60" y="76" font-family="'Segoe UI', Arial Black, sans-serif" font-size="38" font-weight="900"
+        fill="url(#logoGrad)" opacity="0.8">G</text>
+
+  <!-- Accent dot -->
+  <circle cx="60" cy="14" r="3" fill="#8B5CF6" filter="url(#logo-glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

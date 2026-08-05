@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="60" viewBox="0 0 1600 60">
+  <defs>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="30%" stop-color="#34D399" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0D1117"/>
+    </linearGradient>
+    <filter id="liquid-blur">
+      <feGaussianBlur stdDeviation="0 4"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="60" fill="#0D1117"/>
+
+  <!-- Liquid wave fill -->
+  <path d="M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35 L1600,60 L0,60 Z"
+        fill="url(#liquidGrad)" opacity="0.3" filter="url(#liquid-blur)">
+    <animate attributeName="d"
+      values="M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35 L1600,60 L0,60 Z;
+              M0,30 Q200,50 400,30 Q600,10 800,30 Q1000,50 1200,30 Q1400,10 1600,30 L1600,60 L0,60 Z;
+              M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35 L1600,60 L0,60 Z"
+      dur="6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Liquid wave stroke line -->
+  <path d="M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35"
+        fill="none" stroke="url(#liquidGrad)" stroke-width="2" opacity="0.9">
+    <animate attributeName="d"
+      values="M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35;
+              M0,30 Q200,50 400,30 Q600,10 800,30 Q1000,50 1200,30 Q1400,10 1600,30;
+              M0,35 Q200,15 400,35 Q600,55 800,35 Q1000,15 1200,35 Q1400,55 1600,35"
+      dur="6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Accent nodes on the wave (static positions) -->
+  <circle cx="400" cy="35" r="2.5" fill="#34D399" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="35" r="2.5" fill="#38BDF8" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1200" cy="35" r="2.5" fill="#34D399" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

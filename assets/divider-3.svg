@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="60" viewBox="0 0 1600 60">
+  <defs>
+    <!-- Static gradient; animation on elements, not on gradient definition -->
+    <linearGradient id="gradDiv" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="25%" stop-color="#F472B6" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#6366F1" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0D1117"/>
+    </linearGradient>
+    <linearGradient id="gradDivAlt" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="25%" stop-color="#6366F1" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#F472B6" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0D1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="60" fill="#0D1117"/>
+
+  <!-- Gradient bar — animates opacity to pulse (no gradient animation needed) -->
+  <rect x="80" y="27" width="1440" height="6" rx="3" fill="url(#gradDiv)" opacity="0.85">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Overlay bar for color-shift illusion -->
+  <rect x="80" y="27" width="1440" height="6" rx="3" fill="url(#gradDivAlt)" opacity="0">
+    <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Central diamond accent -->
+  <polygon points="800,24 808,30 800,36 792,30" fill="#8B5CF6" opacity="0.9">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- Left diamond accent -->
+  <polygon points="400,27 406,30 400,33 394,30" fill="#F472B6" opacity="0.6"/>
+  <!-- Right diamond accent -->
+  <polygon points="1200,27 1206,30 1200,33 1194,30" fill="#38BDF8" opacity="0.6"/>
+</svg>
